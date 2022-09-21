@@ -13,11 +13,11 @@ function randomInt(min,max){
     max = min
     min = 0
   }
-
-  var rand = Math.random()
+//variable to input random numbers
+  let rand = Math.random()
   return Math.floor(min*(1 - rand) + rand*max)
 }
-
+//function to input random characters ,integers, symbols
 function getRandomItem(list) {
   return list [randomInt(list.length)]
 }
@@ -26,7 +26,7 @@ function generate() {
 
   while(true) {
 
-  var userInput= window.prompt(" how long would you like your password?")
+  let userInput= window.prompt(" how long would you like your password?")
 
  if (userInput === null){
   return
@@ -44,13 +44,13 @@ window.alert(" The Password must be between 8 and 128 characters!")
 }
 
 //user variables
-let userWantsNumbers = window.confirm("would you like to add numbers in your password?")
-let userWantsSymbols = window.confirm("would you like to add symbols in your password?")
-let userWantsLowercase = window.confirm("would you like to add lowercase in your password?")
-let userWantsUppercase = window.confirm("would you like to add uppercase in your password?")
+let userWantsNumbers = window.confirm("would you like to add numbers ? ")
+let userWantsSymbols = window.confirm("would you like to add symbols ? ")
+let userWantsLowercase = window.confirm("would you like to add lowercase ?")
+let userWantsUppercase = window.confirm("would you like to add uppercase ?")
 
 //character list
-let numberList = [ "0", "1","2","3","4","5","6","7","8","9"]
+let numberList = [ "0", "1","2","3","4","5","6","7","8","9"
 let symbolsList = ["!","@","#","$","%","^","&","*"]
 let lowercaseList = ["a","b","c","d","e","f","g","h","i","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 let uppercaseList =["A","B","C","D","E","F","G","H","I","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
@@ -79,9 +79,9 @@ if (optionsCart.length === 0){
 
 let generatedPassword=""
 //for loop 
-for (var i=0 ; i < passwordLength; i++){
-  var randomList = getRandomItem(optionsCart)
-  var randomChar = getRandomItem(randomList)
+for (let i=0 ; i < passwordLength; i++){
+  let randomList = getRandomItem(optionsCart)
+  let randomChar = getRandomItem(randomList)
   generatedPassword += randomChar
 }
 return generatedPassword
@@ -91,7 +91,7 @@ return generatedPassword
 
 
 
-// Write password to the #password input
+// generates password
 function writePassword() {
   let password = generate();
   var passwordText = document.querySelector("#password");
